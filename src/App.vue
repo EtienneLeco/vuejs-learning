@@ -1,18 +1,31 @@
 <template>
     <div class="main">
         <div class="hello">
-            Hello<br><br>
-            Your Vuejs app has been successfully mounted. <br>
-            Add your component here 😀
+            <div class="header">Here is a nice toggle to switch between views</div>
+            <div class="toggler">
+                <toggler :tabs="tabs" selected="default"></toggler>
+            </div>
+            <router-view></router-view>
         </div>
     </div>
 </template>
 
 <script>
+    import Toggler from "./Toggler.vue";
+
     export default {
         data() {
-            return {};
+            return {
+                tabs: [{
+                    tab: "default",
+                    label: "Default"
+                }],
+                selected: ""
+            };
         },
+        components: {
+            Toggler,
+        }
     };
 </script>
 
@@ -28,5 +41,11 @@
     .hello {
         display: flex;
         justify-content: left;
+        flex-direction: column;
+    }
+
+    .header,
+    .toggler {
+        margin-bottom: 30px;
     }
 </style>
