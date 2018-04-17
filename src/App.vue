@@ -2,7 +2,7 @@
     <div class="main">
         <div class="hello">
             <div class="header">
-                <button class="button">{{ buttonLabel }}</button>
+                <button class="button">Load data</button>
                 <button class="button" @click="data = []">Clear</button>
             </div>
             <div class="data-list">
@@ -31,13 +31,12 @@
     const URL = "https://opendata.paris.fr/api/records/1.0/search//?dataset=zones-touristiques-internationales&rows=5";
 
     const loadJSon = async (url) => {
-        return fetch(URL).then(res => res.json());
+        return fetch(url).then(res => res.json());
     };
 
     export default {
         data() {
             return {
-                buttonLabel: "Load data",
                 data: []
             };
         }
