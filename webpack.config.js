@@ -12,7 +12,7 @@ module.exports = {
         compress: true,
         port: 9000
     },
-    entry: ENTRY_DIR + "/app.js",
+    entry: ["babel-polyfill", ENTRY_DIR + "/app.js"],
     output: {
         filename: "bundle.js",
         path: DIST_DIR,
