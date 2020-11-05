@@ -1,9 +1,13 @@
 # vuejs-learning
 
-Just type the command 
+Install the dependencies
+```shell
+npm install
+```
+
+Start a local web server on port 9000 with hot-reloading
 ```shell
 npm start
 ```
-It will launch a web server on port 9000 that will hot reload any file after a change.
 
 Then visit http://localhost:9000/
